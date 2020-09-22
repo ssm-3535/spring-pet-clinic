@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: sansanmoe
+Build-Jdk: 13.0.2
+Implementation-Title: pet-clinic-web
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: ssm.springframework
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/spring-pet-clinic/pet-clinic-web
+Created-By: Maven Integration for Eclipse
+

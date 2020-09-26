@@ -4,8 +4,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import ssm.springframework.springpetclinic.model.Owner;
+import ssm.springframework.springpetclinic.model.PetType;
 import ssm.springframework.springpetclinic.model.Vet;
 import ssm.springframework.springpetclinic.services.OwnerService;
+import ssm.springframework.springpetclinic.services.PetTypeService;
 import ssm.springframework.springpetclinic.services.VetService;
 import ssm.springframework.springpetclinic.services.map.OwnerServiceMap;
 import ssm.springframework.springpetclinic.services.map.VetServiceMap;
@@ -15,17 +17,27 @@ public class DataLoader implements CommandLineRunner{
 
 	private final OwnerService ownerService;
 	private final VetService vetService;
+	private final PetTypeService petTypeService;
 	
-	public DataLoader(VetService vetService, OwnerService ownerService) {
+	public DataLoader(VetService vetService, OwnerService ownerService, PetTypeService petTypeService) {
 		this.ownerService = ownerService;
 		this.vetService = vetService;
 		// TODO Auto-generated constructor stub
+		this.petTypeService = petTypeService;
 	}
 	
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("******win lar************");
+		
+		PetType dog = new PetType();
+		dog.setName("Dog");
+		PetType savedDogPetType = petTypeService.save(dog);
+		
+		PetType cat = new PetType();
+		cat.setName("Cat");
+		PetType savedCatPetType = petTypeService.save(cat);
 		
 		Owner owner1 = new Owner();
 		owner1.setFirstName("San San");

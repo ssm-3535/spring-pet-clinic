@@ -5,7 +5,6 @@ import java.util.Set;
 import org.springframework.stereotype.Service;
 
 import ssm.springframework.springpetclinic.model.Owner;
-import ssm.springframework.springpetclinic.services.CrudService;
 import ssm.springframework.springpetclinic.services.OwnerService;
 
 @Service

@@ -1,24 +1,25 @@
 package ssm.springframework.springpetclinic.bootstrap;
 
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
 import ssm.springframework.springpetclinic.model.Owner;
 import ssm.springframework.springpetclinic.model.Vet;
 import ssm.springframework.springpetclinic.services.OwnerService;
-import ssm.springframework.springpetclinic.services.PetService;
 import ssm.springframework.springpetclinic.services.VetService;
 import ssm.springframework.springpetclinic.services.map.OwnerServiceMap;
 import ssm.springframework.springpetclinic.services.map.VetServiceMap;
 
+@Component
 public class DataLoader implements CommandLineRunner{
 
 	private final OwnerService ownerService;
 	private final VetService vetService;
 	
-	public DataLoader() {
+	public DataLoader(VetService vetService, OwnerService ownerService) {
+		this.ownerService = ownerService;
+		this.vetService = vetService;
 		// TODO Auto-generated constructor stub
-		ownerService = new OwnerServiceMap();
-		vetService = new VetServiceMap();
 	}
 	
 	@Override

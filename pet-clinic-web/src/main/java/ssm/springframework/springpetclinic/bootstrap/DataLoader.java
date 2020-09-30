@@ -10,10 +10,12 @@ import ssm.springframework.springpetclinic.model.Pet;
 import ssm.springframework.springpetclinic.model.PetType;
 import ssm.springframework.springpetclinic.model.Speciality;
 import ssm.springframework.springpetclinic.model.Vet;
+import ssm.springframework.springpetclinic.model.Visit;
 import ssm.springframework.springpetclinic.services.OwnerService;
 import ssm.springframework.springpetclinic.services.PetTypeService;
 import ssm.springframework.springpetclinic.services.SpecialityService;
 import ssm.springframework.springpetclinic.services.VetService;
+import ssm.springframework.springpetclinic.services.VisitService;
 import ssm.springframework.springpetclinic.services.map.OwnerMapService;
 import ssm.springframework.springpetclinic.services.map.VetMapService;
 
@@ -24,13 +26,15 @@ public class DataLoader implements CommandLineRunner{
 	private final VetService vetService;
 	private final PetTypeService petTypeService;
 	private final SpecialityService specialityService;
+	private final VisitService visitService;
 	
-	public DataLoader(VetService vetService, OwnerService ownerService, PetTypeService petTypeService, SpecialityService specialityService) {
+	public DataLoader(VetService vetService, OwnerService ownerService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
 		this.ownerService = ownerService;
 		this.vetService = vetService;
 		// TODO Auto-generated constructor stub
 		this.petTypeService = petTypeService;
 		this.specialityService = specialityService;
+		this.visitService = visitService;
 	}
 	
 	@Override
@@ -95,6 +99,13 @@ public class DataLoader implements CommandLineRunner{
 		owner2.getPets().add(fionasCat);
 		
 		ownerService.save(owner2);
+		
+		Visit catVisit = new Visit();
+		catVisit.setPet(fionasCat);
+		catVisit.setDate(LocalDate.now());
+		catVisit.setDescription("Sneezy Kitty");
+		
+		visitService.save(catVisit);
 		
 		System.out.println("Loaded owners ...");
 		

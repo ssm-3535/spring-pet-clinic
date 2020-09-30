@@ -3,10 +3,15 @@ package ssm.springframework.springpetclinic.springdatajpa;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
+
 import ssm.springframework.springpetclinic.model.Visit;
 import ssm.springframework.springpetclinic.repositories.VisitRepository;
 import ssm.springframework.springpetclinic.services.VisitService;
 
+@Service
+@Profile("springdatajpa")
 public class VisitSDJpaService implements VisitService{
 	
 	private final VisitRepository visitRepository;

@@ -3,42 +3,40 @@ package ssm.springframework.springpetclinic.services.map;
 import java.util.Set;
 
 import org.springframework.stereotype.Service;
-import ssm.springframework.springpetclinic.model.PetType;
-import ssm.springframework.springpetclinic.services.PetTypeService;
+import ssm.springframework.springpetclinic.model.Pet;
+import ssm.springframework.springpetclinic.services.PetService;
 
 @Service
-public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService{
+public class PetMapService extends AbstractMapService<Pet, Long> implements PetService{
 
 	@Override
-	public PetType save(PetType object) {
+	public Pet save(Pet object) {
 		// TODO Auto-generated method stub
 		return super.save(object);
 	}
 
 	@Override
-	public void delete(PetType object) {
-		// TODO Auto-generated method stub
-		super.delete(object);
-		
-	}
-
-	@Override
-	public Set<PetType> findAll() {
+	public Set<Pet> findAll() {
 		// TODO Auto-generated method stub
 		return super.findAll();
 	}
 
 	@Override
-	public PetType findById(Long id) {
+	public Pet findById(Long id) {
 		// TODO Auto-generated method stub
 		return super.findById(id);
 	}
-
 
 	@Override
 	public void deleteById(Long id) {
 		// TODO Auto-generated method stub
 		super.deleteById(id);
+	}
+
+	@Override
+	public void delete(Pet object) {
+		// TODO Auto-generated method stub
+		super.delete(object);
 	}
 
 }

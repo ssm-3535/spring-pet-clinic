@@ -14,8 +14,8 @@ import ssm.springframework.springpetclinic.services.OwnerService;
 import ssm.springframework.springpetclinic.services.PetTypeService;
 import ssm.springframework.springpetclinic.services.SpecialityService;
 import ssm.springframework.springpetclinic.services.VetService;
-import ssm.springframework.springpetclinic.services.map.OwnerServiceMap;
-import ssm.springframework.springpetclinic.services.map.VetServiceMap;
+import ssm.springframework.springpetclinic.services.map.OwnerMapService;
+import ssm.springframework.springpetclinic.services.map.VetMapService;
 
 @Component
 public class DataLoader implements CommandLineRunner{

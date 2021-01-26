@@ -1,27 +1,24 @@
 package ssm.springframework.springpetclinic.model;
 
-import java.util.Set;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-@Getter
+/**
+ * Created by jt on 7/29/18.
+ */
 @Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "specialities")
-public class Speciality extends BaseEntity{
-	
-	@Column(name = "description")
-	private String description;
+@Table(name = "specialties")
+public class Speciality extends BaseEntity {
+
+    @Column(name = "description")
+    private String description;
 
 }

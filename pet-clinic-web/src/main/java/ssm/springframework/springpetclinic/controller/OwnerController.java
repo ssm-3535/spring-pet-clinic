@@ -32,7 +32,7 @@ public class OwnerController {
 	
 	@InitBinder
 	public void setAllowedFields(WebDataBinder dataBinder) {
-		dataBinder.setAllowedFields("id");
+		dataBinder.setDisallowedFields("id");
 	}
 
 	@RequestMapping({"", "/", "/index", "index.html"})
@@ -90,6 +90,7 @@ public class OwnerController {
     	if(result.hasErrors()) {
     		return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
     	}else {
+    		System.out.println("owner >>>>"+ owner);
     		Owner savedOwner = ownerService.save(owner);
     		return "redirect:/owners/" + savedOwner.getId();
     	}
